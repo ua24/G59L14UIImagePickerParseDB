@@ -21,6 +21,7 @@ class AddPhotoVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
 	@IBAction func addPhotoPressed(_ sender: UIBarButtonItem) {
 		let picker = UIImagePickerController()
 		picker.delegate = self
+//		picker.sourceType = .camera
 		present(picker, animated: true, completion: nil)
 		
 	}

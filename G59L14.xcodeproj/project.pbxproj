@@ -12,6 +12,7 @@
 		4CED2A952017A789004F8797 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CED2A942017A789004F8797 /* Assets.xcassets */; };
 		4CED2A982017A789004F8797 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CED2A962017A789004F8797 /* LaunchScreen.storyboard */; };
 		4CED2AA02017A920004F8797 /* AddPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CED2A9F2017A920004F8797 /* AddPhotoVC.swift */; };
+		CFD120F124408EF78CDB6F68 /* Pods_G59L14.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F6996AD74851F6BA82204FF /* Pods_G59L14.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		4CED2A972017A789004F8797 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CED2A992017A789004F8797 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CED2A9F2017A920004F8797 /* AddPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoVC.swift; sourceTree = "<group>"; };
+		7F6996AD74851F6BA82204FF /* Pods_G59L14.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_G59L14.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBBA6A99B1DDF460A042DB3F /* Pods-G59L14.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-G59L14.debug.xcconfig"; path = "Pods/Target Support Files/Pods-G59L14/Pods-G59L14.debug.xcconfig"; sourceTree = "<group>"; };
+		E016AABDCCBA75FACDCDD4FA /* Pods-G59L14.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-G59L14.release.xcconfig"; path = "Pods/Target Support Files/Pods-G59L14/Pods-G59L14.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFD120F124408EF78CDB6F68 /* Pods_G59L14.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		174BDE369E15E2D950D8EA57 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7F6996AD74851F6BA82204FF /* Pods_G59L14.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4CED2A812017A788004F8797 = {
 			isa = PBXGroup;
 			children = (
 				4CED2A8C2017A789004F8797 /* G59L14 */,
 				4CED2A8B2017A789004F8797 /* Products */,
+				95BD3C1713CAA6A253814C09 /* Pods */,
+				174BDE369E15E2D950D8EA57 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = G59L14;
 			sourceTree = "<group>";
 		};
+		95BD3C1713CAA6A253814C09 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BBBA6A99B1DDF460A042DB3F /* Pods-G59L14.debug.xcconfig */,
+				E016AABDCCBA75FACDCDD4FA /* Pods-G59L14.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4CED2A9C2017A789004F8797 /* Build configuration list for PBXNativeTarget "G59L14" */;
 			buildPhases = (
+				67069D48B43372B809791542 /* [CP] Check Pods Manifest.lock */,
 				4CED2A862017A789004F8797 /* Sources */,
 				4CED2A872017A789004F8797 /* Frameworks */,
 				4CED2A882017A789004F8797 /* Resources */,
+				7A0667A38794FEBE97B8A661 /* [CP] Embed Pods Frameworks */,
+				58884F63CE6B63C37445997A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,64 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		58884F63CE6B63C37445997A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-G59L14/Pods-G59L14-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67069D48B43372B809791542 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-G59L14-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A0667A38794FEBE97B8A661 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-G59L14/Pods-G59L14-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+				"${BUILT_PRODUCTS_DIR}/ParseUI/ParseUI.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ParseUI.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-G59L14/Pods-G59L14-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4CED2A862017A789004F8797 /* Sources */ = {
@@ -272,6 +357,7 @@
 		};
 		4CED2A9D2017A789004F8797 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBBA6A99B1DDF460A042DB3F /* Pods-G59L14.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +373,7 @@
 		};
 		4CED2A9E2017A789004F8797 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E016AABDCCBA75FACDCDD4FA /* Pods-G59L14.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
