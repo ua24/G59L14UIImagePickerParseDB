@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="photoCell" rowHeight="170" id="KGk-i7-Jjw" customClass="PhotoTVCell" customModule="G59L14" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="170"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="169.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LGM-4c-Vfv" customClass="PFImageView">
+                        <rect key="frame" x="0.0" y="-1" width="320" height="170"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="LGM-4c-Vfv" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="5Z0-I8-7un"/>
+                    <constraint firstItem="LGM-4c-Vfv" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="KU8-Tg-RG8"/>
+                    <constraint firstItem="LGM-4c-Vfv" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="WFt-Jf-Zhu"/>
+                    <constraint firstItem="LGM-4c-Vfv" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" id="hJk-sr-nMc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imageBox" destination="LGM-4c-Vfv" id="Axh-PQ-nR9"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="-9"/>
+        </tableViewCell>
+    </objects>
+</document>

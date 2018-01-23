@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0460982017C84200A3136B /* PhotoTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0460962017C84200A3136B /* PhotoTVCell.swift */; };
+		4C0460992017C84200A3136B /* PhotoTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C0460972017C84200A3136B /* PhotoTVCell.xib */; };
+		4C04609B2017C92200A3136B /* AllPhotoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C04609A2017C92200A3136B /* AllPhotoTVC.swift */; };
 		4CED2A8E2017A789004F8797 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CED2A8D2017A789004F8797 /* AppDelegate.swift */; };
 		4CED2A932017A789004F8797 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CED2A912017A789004F8797 /* Main.storyboard */; };
 		4CED2A952017A789004F8797 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CED2A942017A789004F8797 /* Assets.xcassets */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C0460962017C84200A3136B /* PhotoTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTVCell.swift; sourceTree = "<group>"; };
+		4C0460972017C84200A3136B /* PhotoTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoTVCell.xib; sourceTree = "<group>"; };
+		4C04609A2017C92200A3136B /* AllPhotoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPhotoTVC.swift; sourceTree = "<group>"; };
 		4CED2A8A2017A789004F8797 /* G59L14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = G59L14.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CED2A8D2017A789004F8797 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CED2A922017A789004F8797 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,6 +77,9 @@
 			children = (
 				4CED2A8D2017A789004F8797 /* AppDelegate.swift */,
 				4CED2A912017A789004F8797 /* Main.storyboard */,
+				4C04609A2017C92200A3136B /* AllPhotoTVC.swift */,
+				4C0460962017C84200A3136B /* PhotoTVCell.swift */,
+				4C0460972017C84200A3136B /* PhotoTVCell.xib */,
 				4CED2A9F2017A920004F8797 /* AddPhotoVC.swift */,
 				4CED2A942017A789004F8797 /* Assets.xcassets */,
 				4CED2A962017A789004F8797 /* LaunchScreen.storyboard */,
@@ -150,6 +159,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C0460992017C84200A3136B /* PhotoTVCell.xib in Resources */,
 				4CED2A982017A789004F8797 /* LaunchScreen.storyboard in Resources */,
 				4CED2A952017A789004F8797 /* Assets.xcassets in Resources */,
 				4CED2A932017A789004F8797 /* Main.storyboard in Resources */,
@@ -221,8 +231,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C04609B2017C92200A3136B /* AllPhotoTVC.swift in Sources */,
 				4CED2A8E2017A789004F8797 /* AppDelegate.swift in Sources */,
 				4CED2AA02017A920004F8797 /* AddPhotoVC.swift in Sources */,
+				4C0460982017C84200A3136B /* PhotoTVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
