@@ -27,6 +27,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5x-lh-hPb">
                                 <rect key="frame" x="137" y="200" width="47" height="30"/>
                                 <state key="normal" title="upload"/>
+                                <connections>
+                                    <action selector="uploadButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VhP-e0-JkH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -48,6 +51,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="previewImageBox" destination="pDD-ii-fyp" id="cbL-nf-soJ"/>
+                        <outlet property="uploadButton" destination="X5x-lh-hPb" id="sSE-dx-TVP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

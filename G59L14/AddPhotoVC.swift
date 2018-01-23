@@ -12,6 +12,7 @@ import ParseUI
 
 class AddPhotoVC: UIViewController {
 	
+	@IBOutlet weak var uploadButton: UIButton!
 	@IBOutlet weak var previewImageBox: UIImageView!
 	
 	override func viewDidLoad() {
@@ -33,12 +34,40 @@ class AddPhotoVC: UIViewController {
 		
 	}
 	
+	@IBAction func uploadButtonPressed(_ sender: UIButton) {
+		sender.isEnabled = false
+		//
+		let photoObj = PFObject(className: "Photo")
+		if let image = previewImageBox.image {
+			if let data = UIImageJPEGRepresentation(image, 0.5) {
+				var name = "photo\((Date().description as NSString).replacingOccurrences(of: "-", with: " ")).jpg"
+				name = "photo\(data.count).jpg"
+				print(name)
+				let file = PFFile(name:name, data:data)
+				file?.saveInBackground(block: { (success, error) in
+					if success {
+						photoObj["image"] = file
+						photoObj["user"] = PFUser.current()!
+						photoObj.saveEventually({ (success, error) in
+							if !success {
+								print(error!)
+							}
+							else {
+								print("your image saved - check DB")
+								self.previewImageBox.image = nil
+							}
+						})
+					}
+				})
+			}
+		}
+	}
 }
 
 extension AddPhotoVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 	
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-		print(info)
+		uploadButton.isEnabled = true
 		dismiss(animated: true, completion: nil)
 		previewImageBox.image = info[UIImagePickerControllerOriginalImage] as? UIImage
 	}
