@@ -8,5 +8,11 @@ target 'G59L14' do
   # Pods for G59L14
 pod 'Parse'
 pod 'ParseUI'
+pod 'FacebookCore'
+pod 'FacebookLogin'
+pod 'AccountKit'
+
+
+
 
 end

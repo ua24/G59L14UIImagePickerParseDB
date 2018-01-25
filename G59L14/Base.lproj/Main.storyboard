@@ -53,6 +53,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Photyk4000" id="1di-fh-07L">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="pIQ-X9-DLh">
+                            <connections>
+                                <action selector="logoutPressed:" destination="BYZ-38-t0r" id="vX4-G9-mXk"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CZg-aa-kiI">
                             <connections>
                                 <action selector="addPhotoPressed:" destination="BYZ-38-t0r" id="hdQ-ez-3qZ"/>
@@ -82,6 +87,7 @@
                         </connections>
                     </tableView>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="yit-YN-Ld2">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <action selector="refreshPushed:" destination="M1j-vH-2Su" eventType="valueChanged" id="Nrf-K5-7It"/>

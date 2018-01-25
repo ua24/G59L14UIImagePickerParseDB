@@ -9,6 +9,9 @@
 import UIKit
 import Parse
 import ParseUI
+import FBSDKCoreKit
+import FBSDKLoginKit
+
 
 class AddPhotoVC: UIViewController {
 	
@@ -62,6 +65,12 @@ class AddPhotoVC: UIViewController {
 			}
 		}
 	}
+
+	@IBAction func logoutPressed(_ sender: UIBarButtonItem) {
+		PFUser.logOut()
+		checkLogin()
+	}
+	
 }
 
 extension AddPhotoVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -89,17 +98,66 @@ extension AddPhotoVC: PFLogInViewControllerDelegate {
 		else {
 			// Show the signup or login screen
 			let loginVC = PFLogInViewController()
+			let facebookLoginButton = FBSDKLoginButton()
+			facebookLoginButton.frame.origin = CGPoint(x: 20, y: 20)
+//			facebookLoginButton.setTitle("Login with facebook", for: .normal)
+//			facebookLoginButton.setTitle("", for: .highlighted)
+//
+//			facebookLoginButton.addTarget(self, action: #selector(showFacebookLogin(from:)), for: .touchUpInside)
+//			facebookLoginButton.backgroundColor = .red
+//			let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
+//			fbLoginManager.loginBehavior = FBSDKLoginBehavior.Web
+//			fbLoginManager.logInWithReadPermissions(["public_profile","email"], fromViewController: self) { (result, error) -> Void in
+//				if error != nil {
+//					print(error.localizedDescription)
+//					self.dismissViewControllerAnimated(true, completion: nil)
+//				} else if result.isCancelled {
+//					print("Cancelled")
+//					self.dismissViewControllerAnimated(true, completion: nil)
+//				} else {
+//
+//				}
+//			}
+			
+			
+			facebookLoginButton.delegate = self
+			loginVC.view.addSubview(facebookLoginButton)
 			loginVC.delegate = self
 			loginVC.signUpController?.delegate = self
 			//			loginVC.de
 			present(loginVC, animated: true, completion: nil)
-		}}
+		}
+	}
+	
+	
+	@objc func showFacebookLogin(from viewController: UIViewController) {
+		print("fb button pressed")
+		
+	}
 	
 }
+
 
 extension AddPhotoVC: PFSignUpViewControllerDelegate {
 	
 	func signUpViewController(_ signUpController: PFSignUpViewController, didSignUp user: PFUser) {
 		log(PFLogInViewController(), didLogIn: user)
 	}
+}
+
+extension AddPhotoVC: FBSDKLoginButtonDelegate {
+	func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+		FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, relationship_status"]).start { (connection, anyShit, error) in
+			print(connection)
+			print(anyShit)
+			let id = (anyShit as! [String : Any])["id"] as! String
+			print(id)
+		}
+
+	}
+	
+	func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+		
+	}
+
 }
