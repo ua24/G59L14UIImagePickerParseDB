@@ -17,11 +17,14 @@ class AddPhotoVC: UIViewController {
 	
 	@IBOutlet weak var uploadButton: UIButton!
 	@IBOutlet weak var previewImageBox: UIImageView!
+	@IBOutlet weak var imageBoxHeightConstraint: NSLayoutConstraint!
+	@IBOutlet weak var button2: UIButton!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		// Do any additional setup after loading the view.
+		imageBoxHeightConstraint.constant = 0
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
@@ -47,6 +50,10 @@ class AddPhotoVC: UIViewController {
 				name = "photo\(data.count).jpg"
 				print(name)
 				let file = PFFile(name:name, data:data)
+				file?.saveInBackground(progressBlock: { (percent) in
+					print(percent)
+					self.imageBoxHeightConstraint.constant = 100 - CGFloat(percent)
+				})
 				file?.saveInBackground(block: { (success, error) in
 					if success {
 						photoObj["image"] = file
@@ -64,6 +71,7 @@ class AddPhotoVC: UIViewController {
 				})
 			}
 		}
+		
 	}
 
 	@IBAction func logoutPressed(_ sender: UIBarButtonItem) {
@@ -71,14 +79,46 @@ class AddPhotoVC: UIViewController {
 		checkLogin()
 	}
 	
+	@IBAction func button2Pressed(_ sender: UIButton) {
+//		UIView.animate(withDuration: 1) {
+//
+//		}
+//
+//		UIView.animate(withDuration: 1, delay: 2, options: [.autoreverse, .allowUserInteraction], animations: {
+//			sender.frame.origin.x = 16
+//			sender.backgroundColor = UIColor(red: CGFloat(arc4random_uniform(256))/255,
+//											 green: CGFloat(arc4random_uniform(256))/255,
+//											 blue: CGFloat(arc4random_uniform(256))/255,
+//											 alpha: 1)
+//		}, completion: nil)
+		
+		UIView.transition(with: self.view, duration: 1, options:[.transitionCrossDissolve], animations: {
+			self.navigationItem.title = (arc4random()%999).description
+			sender.setTitle(self.navigationItem.title, for: .normal)
+		}, completion: nil)
+		
+		
+		
+	}
+	
+
 }
 
 extension AddPhotoVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 	
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+		
+		
 		uploadButton.isEnabled = true
-		dismiss(animated: true, completion: nil)
-		previewImageBox.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+		dismiss(animated: true) {
+			self.imageBoxHeightConstraint.constant = 128
+			self.previewImageBox.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+			UIView.animate(withDuration: 1) {
+				self.view.layoutIfNeeded()
+			}
+		}
+		
+		
 	}
 }
 
@@ -128,7 +168,6 @@ extension AddPhotoVC: PFLogInViewControllerDelegate {
 			present(loginVC, animated: true, completion: nil)
 		}
 	}
-	
 	
 	@objc func showFacebookLogin(from viewController: UIViewController) {
 		print("fb button pressed")
